@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tienda</property>
+        <property name="hibernate.connection.url">jdbc:mysql://phpmyadmin-ccbk.1d35.starter-us-east-1.openshiftapps.com/tienda</property>
+        -->
+        <property name="hibernate.connection.url">jdbc:mysql://mysql:3306/tienda</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">MM3Ktcyp8wDrlGWg</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <mapping resource="tienda/dto/Tabla.hbm.xml" />
+        <mapping resource="tienda/dto/Estado.hbm.xml" />
+        <mapping resource="tienda/dto/Rol.hbm.xml" />
+        <mapping resource="tienda/dto/Usuario.hbm.xml" />
+        <mapping resource="tienda/dto/Marca.hbm.xml" />
+        <mapping resource="tienda/dto/Proveedor.hbm.xml" />
+        <mapping resource="tienda/dto/Cliente.hbm.xml" />
+        <mapping resource="tienda/dto/Producto.hbm.xml" />
+        <mapping resource="tienda/dto/Facturacab.hbm.xml" />
+        <mapping resource="tienda/dto/Facturadet.hbm.xml" />
+        
+    </session-factory>
+</hibernate-configuration>

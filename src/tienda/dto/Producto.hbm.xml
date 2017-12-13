@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 02/10/2017 18:37:43 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="tienda" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="tienda.dto.Producto" optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="producto">
+		<id name="idproducto" type="string">
+			<column length="10" name="idproducto" />
+			<generator class="assigned" />
+		</id>
+		<many-to-one class="tienda.dto.Marca" embed-xml="true" fetch="select"
+			insert="true" name="marca" not-found="exception" optimistic-lock="true"
+			unique="false" update="true">
+			<column length="3" name="idmarca" not-null="true" />
+		</many-to-one>
+		<many-to-one class="tienda.dto.Proveedor" embed-xml="true" fetch="select"
+			insert="true" name="proveedor" not-found="exception" optimistic-lock="true"
+			unique="false" update="true">
+			<column length="10" name="idproveedor" not-null="true" />
+		</many-to-one>
+		<property generated="never" lazy="false" name="nombre"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="100" name="nombre" not-null="true" unique="true" />
+		</property>
+		<property generated="never" lazy="false" name="codigobarra"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="13" name="codigobarra" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="precio"
+			optimistic-lock="true" type="double" unique="false">
+			<column name="precio" not-null="true" precision="22" scale="0" />
+		</property>
+		<property generated="never" lazy="false" name="cantidad"
+			optimistic-lock="true" type="int" unique="false">
+			<column name="cantidad" not-null="true" />
+		</property>
+		<property generated="never" lazy="false" name="fechareg"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="0" name="fechareg" not-null="true" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="facturadets" optimistic-lock="true" sort="unsorted"
+			table="facturadet">
+			<key on-delete="noaction">
+				<column length="10" name="idproducto" not-null="true" />
+			</key>
+			<one-to-many class="tienda.dto.Facturadet" embed-xml="true"
+				not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

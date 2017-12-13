@@ -8,9 +8,12 @@
         <!--  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tienda</property>
         <property name="hibernate.connection.url">jdbc:mysql://phpmyadmin-ccbk.1d35.starter-us-east-1.openshiftapps.com/tienda</property>
         -->
-        <property name="hibernate.connection.url">jdbc:mysql://mysql:3306/tienda</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/tienda</property>
         <property name="hibernate.connection.username">root</property>
+        <!-- 
         <property name="hibernate.connection.password">MM3Ktcyp8wDrlGWg</property>
+         -->
+         <property name="hibernate.connection.password"></property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         
         <mapping resource="tienda/dto/Tabla.hbm.xml" />

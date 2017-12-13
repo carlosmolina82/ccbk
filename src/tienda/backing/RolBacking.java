@@ -139,17 +139,17 @@ public class RolBacking {
 					mensaje = "Seleccione el estado.";
 				}
 				// FacesContext.getCurrentInstance().addMessage(null, new
-				// FacesMessage("Información", mensaje));
+				// FacesMessage("Mensaje", mensaje));
 			} else {
 				mensaje = "El nombre del rol debe ser mayor a 2 caracteres.";
 				// FacesContext.getCurrentInstance().addMessage(null, new
-				// FacesMessage("Información", mensaje));
+				// FacesMessage("Mensaje", mensaje));
 			}
 			} else {
 				mensaje = "El id, debe ser de 2 caracteres.";
 			}
 
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 			// return mensaje;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -157,7 +157,7 @@ public class RolBacking {
 			// return mensaje;
 			idrol= "";
 			nombrerol = "";
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		}
 	}
 
@@ -180,10 +180,10 @@ public class RolBacking {
 			}
 			eliminados.clear();
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "Las filas seleccionadas se eliminaron."));
+					new FacesMessage("Mensaje", "Las filas seleccionadas se eliminaron."));
 		} else {
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "No existen filas seleccionadas."));
+					new FacesMessage("Mensaje", "No existen filas seleccionadas."));
 		}
 		return "regestado";
 	}
@@ -192,14 +192,14 @@ public class RolBacking {
 		try {
 			String msg = mm.eliminarRol(rolTemp.getIdrol());
 
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", msg));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", msg));
 			// System.err.println("--------------- DENTRO DE ELIMINAR FILA
 			// ------------------ IDTABLA ["
 			// + tablaTemp.getIdtabla() + "]");
 		} catch (Exception e) {
 			// TODO: handle exception
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", e.getMessage() + " " +rolTemp.getIdrol()));
+					new FacesMessage("Mensaje", e.getMessage() + " " +rolTemp.getIdrol()));
 			// System.err.println("--------------- " + e.getMessage() + "
 			// ------------------");
 		}
@@ -212,7 +212,7 @@ public class RolBacking {
 			nombrerol = "";
 			idestado = "";
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", tablaTemp.getIdtabla()));
+			// FacesMessage("Mensaje", tablaTemp.getIdtabla()));
 
 			rolTemp.setIdrol("");
 			rolTemp.setNombrerol("");
@@ -224,7 +224,7 @@ public class RolBacking {
 		} catch (Exception e) {
 			// TODO: handle exception
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", e.getMessage()+"
+			// FacesMessage("Mensaje", e.getMessage()+"
 			// "+tablaTemp.getIdtabla()));
 			// System.err.println("--------------- "+e.getMessage()+"
 			// ------------------");
@@ -237,12 +237,12 @@ public class RolBacking {
 				// String nombretabla=tablaTemp.getNombretabla();
 				mensaje = mm.actualizar(rolTemp);
 			} else {
-				mensaje = "No existe información para modificar.";
+				mensaje = "No existe datos para modificar.";
 			}
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		} catch (Exception e) {
 			// TODO: handle exception
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", e.getMessage()));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", e.getMessage()));
 		}
 	}
 
@@ -265,10 +265,10 @@ public class RolBacking {
 			// mensaje = "Dentro de actualizar";
 			// System.err.println(mensaje);
 
-			FacesMessage msg = new FacesMessage("Información", mensaje);
+			FacesMessage msg = new FacesMessage("Mensaje", mensaje);
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		} else {
-			FacesMessage msg = new FacesMessage("Información", "Debe ingresar los nuevos datos.");
+			FacesMessage msg = new FacesMessage("Mensaje", "Debe ingresar los nuevos datos.");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		}
 
@@ -278,7 +278,7 @@ public class RolBacking {
 
 	public void cancelar(RowEditEvent event) {
 
-		FacesMessage msg = new FacesMessage("Información", "Modificación cancelado por el usuario.");
+		FacesMessage msg = new FacesMessage("Mensaje", "Cambio cancelado por el usuario.");
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 

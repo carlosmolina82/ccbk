@@ -17,7 +17,7 @@ public class HibernateUtil {
 			sessionFactory = configuracion.buildSessionFactory(ssrb.build());
 		} catch (Throwable e) {
 			// TODO: handle exception
-			System.err.println("Falló al crear el SessionFactory Inicial: " + e);
+			System.err.println("Falla al crear el SessionFactory Inicial: " + e);
 			throw new ExceptionInInitializerError(e);
 		}
 	}

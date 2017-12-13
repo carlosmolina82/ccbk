@@ -73,7 +73,7 @@ public class Obtener_Imagen extends HttpServlet {
 			// salida a pagina de error y devolver foto por defecto
 			// leemos el fichero del ftp por defecto
 			url = directorio + idmorador + ".jpg";
-			File f = new File(url); // Const..Default à Es
+			File f = new File(url); // Const..Default  Es
 									// un _String con la
 									// url
 			RandomAccessFile raf = new RandomAccessFile(url, "r");

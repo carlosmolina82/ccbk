@@ -50,9 +50,9 @@ public class Login extends HttpServlet {
 		// campos vacios
 		if (usuario.isEmpty() || clave.isEmpty()) {
 			response.sendRedirect("login.xhtml");
-			respuesta.setAttribute("ncs", "Ingrese el usuario y la contraseña.");
+			respuesta.setAttribute("ncs", "Ingrese el usuario y la clave.");
 		} else {// primer else
-			// Cuando el usuario no está registrado en la base de datos
+			// Cuando el usuario no esta registrado en la base de datos
 			// clave hash Cemq-1982
 			if (usuario.equals("administrador") && claveusuario.equals("5f69e0c7207062260717db383422ae97")) {
 				respuesta.setAttribute("usuario", usuario);
@@ -60,10 +60,10 @@ public class Login extends HttpServlet {
 				respuesta.setAttribute("hash", claveusuario);
 				respuesta.setAttribute("ncs", "ADMINISTRADOR DEL SISTEMA");
 				respuesta.setAttribute("rol", "administrador");
-				// redirige a la página principal del sistema
+				// redirige a la pagina principal del sistema
 				response.sendRedirect("index.xhtml");
 			} else {// segundo else
-				// No hay campos vacios obtengo información de base de datos
+				// No hay campos vacios obtengo informacion de base de datos
 				UsuarioDAOImpl usu = new UsuarioDAOImpl();
 				String nc, val;
 				// nc = usu.comprobarExistenciaUsuario(usuario);
@@ -74,14 +74,14 @@ public class Login extends HttpServlet {
 
 						// val = usu.buscarPorCedulaUsu(usuario, clave);
 						val = usu.buscarPorAliasUsuario(usuario, claveusuario);
-						// validación de usuario y rol
+						// validacion de usuario y rol
 						switch (val) {
 						case "administrador":
 							respuesta.setAttribute("usuario", usuario);
 							// respuesta.setAttribute("clave", clave);
 							respuesta.setAttribute("hash", claveusuario);
 							respuesta.setAttribute("rol", val);
-							// redirecciona a la página principal del
+							// redirecciona a la pagina principal del
 							// sistema
 							response.sendRedirect("index.xhtml");
 							break;
@@ -90,7 +90,7 @@ public class Login extends HttpServlet {
 							// respuesta.setAttribute("clave", clave);
 							respuesta.setAttribute("hash", claveusuario);
 							respuesta.setAttribute("rol", val);
-							// redirecciona a la página de información del
+							// redirecciona a la pagina de informacion del
 							// usuario
 							// logueado
 							response.sendRedirect("reportes/rgu.jsp");
@@ -100,11 +100,11 @@ public class Login extends HttpServlet {
 							// respuesta.setAttribute("clave", clave);
 							respuesta.setAttribute("hash", claveusuario);
 							respuesta.setAttribute("rol", val);
-							// redirecciona a la página principal
+							// redirecciona a la pagina principal
 							response.sendRedirect("reportes/repdocente.xhtml");
 							break;
 						default:
-							// redirecciona a la página de logueo
+							// redirecciona a la pagina de logueo
 							respuesta.setAttribute("ncs", val);
 							response.sendRedirect("login.xhtml");
 							break;
@@ -113,7 +113,7 @@ public class Login extends HttpServlet {
 					} else {
 						// cuando nc retorna vacio, posiblemente error en la
 						// base de datos
-						respuesta.setAttribute("ncs", "Usuario o contraseña incorrectos. Intente nuevamente.");
+						respuesta.setAttribute("ncs", "Usuario o clave incorrectos. Intente nuevamente.");
 						response.sendRedirect("login.xhtml");
 					}
 				} else {

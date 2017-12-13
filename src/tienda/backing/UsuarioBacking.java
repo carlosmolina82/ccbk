@@ -285,15 +285,15 @@ public class UsuarioBacking {
 					mensaje = "Digite el nombre.";
 				}
 			} else {
-				mensaje = "La cédula debe tener 10 dígitos.";
+				mensaje = "El documento debe tener 10 digitos.";
 			}
 
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 			// return mensaje;
 		} catch (Exception e) {
 			// TODO: handle exception
 			mensaje = e.getMessage();
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		}
 	}
 
@@ -316,10 +316,10 @@ public class UsuarioBacking {
 			}
 			eliminados.clear();
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "Las filas seleccionadas se eliminaron."));
+					new FacesMessage("Mensaje", "Las filas seleccionadas se eliminaron."));
 		} else {
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "No existen filas seleccionadas."));
+					new FacesMessage("Mensaje", "No existen filas seleccionadas."));
 		}
 		return "regusuario";
 	}
@@ -327,14 +327,14 @@ public class UsuarioBacking {
 	public void eliminarFila() {
 		try {
 			String msg = mm.eliminarUsuario(usuarioTemp.getIdusuario());
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", msg));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", msg));
 			// System.err.println("--------------- DENTRO DE ELIMINAR FILA
 			// ------------------ IDTABLA ["
 			// + tablaTemp.getIdtabla() + "]");
 		} catch (Exception e) {
 			// TODO: handle exception
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", e.getMessage() + " " + usuarioTemp.getIdusuario()));
+					new FacesMessage("Mensaje", e.getMessage() + " " + usuarioTemp.getIdusuario()));
 			// System.err.println("--------------- " + e.getMessage() + "
 			// ------------------");
 		}
@@ -352,7 +352,7 @@ public class UsuarioBacking {
 			idestado = "";
 			idrol = "";
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", tablaTemp.getIdtabla()));
+			// FacesMessage("Mensaje", tablaTemp.getIdtabla()));
 
 			usuarioTemp.setIdusuario(idusuario);
 			usuarioTemp.setCedulau(cedulau);
@@ -368,7 +368,7 @@ public class UsuarioBacking {
 		} catch (Exception e) {
 			// TODO: handle exception
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", e.getMessage()+"
+			// FacesMessage("Mensaje", e.getMessage()+"
 			// "+tablaTemp.getIdtabla()));
 			// System.err.println("--------------- "+e.getMessage()+"
 			// ------------------");
@@ -380,12 +380,12 @@ public class UsuarioBacking {
 			if (!usuarioTemp.getIdusuario().isEmpty()) {
 				mensaje = mm.actualizarUsuario(usuarioTemp);
 			} else {
-				mensaje = "No existe información para modificar.";
+				mensaje = "No existe datos para modificar.";
 			}
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		} catch (Exception e) {
 			// TODO: handle exception
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", e.getMessage()));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", e.getMessage()));
 		}
 	}
 
@@ -414,13 +414,13 @@ public class UsuarioBacking {
 		}
 
 		if (cont == 0) {
-			mensaje = "No existe ningún cambio.";
+			mensaje = "No existe cambio.";
 		} else if (cont > 0) {
 			mm.actualizarUsuario(obj);
 			mensaje = "Campos actualizados.";
 		}
 
-		FacesMessage msg = new FacesMessage("Información", mensaje);
+		FacesMessage msg = new FacesMessage("Mensaje", mensaje);
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 
 		nombresued = "";
@@ -431,7 +431,7 @@ public class UsuarioBacking {
 
 	public void cancelar(RowEditEvent event) {
 
-		FacesMessage msg = new FacesMessage("Información", "Modificación cancelado por el usuario.");
+		FacesMessage msg = new FacesMessage("Mensaje", "Cambio cancelado por el usuario.");
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 

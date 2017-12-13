@@ -25,7 +25,7 @@ public class ValidadorCedula {
 
 		// datos verificadores
 		int[] vectorverificador = { 2, 1, 2, 1, 2, 1, 2, 1, 2 };
-		// almacena el número de cédula digito a digito en el vector
+		// almacena el numero de cedula digito a digito en el vector
 		int[] vectorcedula = new int[10];
 		// almacena el valor calculado multiplicando los vectores
 		// vectorverificador con vectorcedula uno a uno
@@ -35,7 +35,7 @@ public class ValidadorCedula {
 		int car = 0;
 		// sum almacena los valores sumados del vector valorcalculado
 		int sum = 0;
-		// mod almacena el módulo
+		// mod almacena el modulo
 		int mod = 0, valverificado = 0;
 
 		if (!cedula.equals("")) {
@@ -50,7 +50,7 @@ public class ValidadorCedula {
 					} else if (car >= 10) {
 						va = String.valueOf(car);
 						for (int k = 0; k < va.length(); k++) {
-							// solicita el valor númerico correspondiente
+							// solicita el valor numerico correspondiente
 							sum = sum + RetornaNumeroDecimal(va.charAt(k));
 						}
 						// sum = sum + int.Parse(va[k].ToString());
@@ -72,28 +72,28 @@ public class ValidadorCedula {
 				} else {
 					valverificado = mod;
 				}
-				// Compara el valor resultado del mod10 con el último digito de
+				// Compara el valor resultado del mod10 con el ultimo digito de
 				// la cedula
 				if (vectorcedula[9] == valverificado) {
 					// verificado =
-					// "N° de cédula correcto, Haz clic para continuar con el
+					// "N° de cedula correcto, Haz clic para continuar con el
 					// registro..";//
-					// Si los dígitos son iguales
+					// Si los digitos son iguales
 					verificado = "ok";
 					resp_correcta = verificado;
 				} else {
 					// verificado = "error";
-					verificado = "N° de cédula incorrecto";// Si los dígitos
+					verificado = "Documento incorrecto";// Si los digitos
 					// son
 					// distintos
 				}
 			} else {
 				// verificado = "error";
-				verificado = "La cédula contiene 10 dígitos";
+				verificado = "El documento contiene 10 digitos";
 			}
 		} else {
 			// verificado = "error";
-			verificado = "Digite número de cédula";
+			verificado = "Digite el documento";
 		}
 		// retorna el valor verificado
 		return verificado;

@@ -92,17 +92,17 @@ public class TablaBacking {
 					idtabla = "";
 					nombretabla = "";
 
-					//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+					//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 				} else {
 					mensaje = "El nombre de la tabla debe ser mayor a 2 caracteres.";
-					//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+					//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 				}
 			} else {
 				mensaje = "El id debe contener 2 caracteres.";
-				//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+				//FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 			}
 
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 			// return mensaje;
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -110,7 +110,7 @@ public class TablaBacking {
 			// return mensaje;
 			idtabla = "";
 			nombretabla = "";
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		}
 	}
 
@@ -129,10 +129,10 @@ public class TablaBacking {
 			}
 			eliminados.clear();
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "Las filas seleccionadas se eliminaron."));
+					new FacesMessage("Mensaje", "Las filas seleccionadas se eliminaron."));
 		} else {
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", "No existen filas seleccionadas."));
+					new FacesMessage("Mensaje", "No existen filas seleccionadas."));
 		}
 		return "regtabla";
 	}
@@ -141,13 +141,13 @@ public class TablaBacking {
 		try {
 			String msg = mm.eliminarTabla(tablaTemp.getIdtabla());
 
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", msg));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", msg));
 			//System.err.println("--------------- DENTRO DE ELIMINAR FILA ------------------ IDTABLA ["
 				//	+ tablaTemp.getIdtabla() + "]");
 		} catch (Exception e) {
 			// TODO: handle exception
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage("Información", e.getMessage() + " " + tablaTemp.getIdtabla()));
+					new FacesMessage("Mensaje", e.getMessage() + " " + tablaTemp.getIdtabla()));
 			//System.err.println("--------------- " + e.getMessage() + " ------------------");
 		}
 	}
@@ -158,7 +158,7 @@ public class TablaBacking {
 			idtabla = "";
 			nombretabla = "";
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", tablaTemp.getIdtabla()));
+			// FacesMessage("Mensaje", tablaTemp.getIdtabla()));
 
 			tablaTemp.setIdtabla("");
 			tablaTemp.setNombretabla("");
@@ -170,7 +170,7 @@ public class TablaBacking {
 		} catch (Exception e) {
 			// TODO: handle exception
 			// FacesContext.getCurrentInstance().addMessage(null, new
-			// FacesMessage("Información", e.getMessage()+"
+			// FacesMessage("Mensaje", e.getMessage()+"
 			// "+tablaTemp.getIdtabla()));
 			// System.err.println("--------------- "+e.getMessage()+"
 			// ------------------");
@@ -183,12 +183,12 @@ public class TablaBacking {
 				//String nombretabla=tablaTemp.getNombretabla();
 				mensaje=mm.actualizarTabla(tablaTemp);
 			}else{
-				mensaje="No existe información para modificar.";
+				mensaje="No existe datos para modificar.";
 			}
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", mensaje));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", mensaje));
 		}catch (Exception e) {
 			// TODO: handle exception
-			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información", e.getMessage()));
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Mensaje", e.getMessage()));
 		}
 	}
 
@@ -211,10 +211,10 @@ public class TablaBacking {
 			// mensaje = "Dentro de actualizar";
 			// System.err.println(mensaje);
 
-			FacesMessage msg = new FacesMessage("Información", mensaje);
+			FacesMessage msg = new FacesMessage("Mensaje", mensaje);
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		} else {
-			FacesMessage msg = new FacesMessage("Información", "Debe ingresar los nuevos datos.");
+			FacesMessage msg = new FacesMessage("Mensaje", "Debe ingresar los nuevos datos.");
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		}
 
@@ -224,7 +224,7 @@ public class TablaBacking {
 
 	public void cancelar(RowEditEvent event) {
 
-		FacesMessage msg = new FacesMessage("Información", "Modificación cancelado por el usuario.");
+		FacesMessage msg = new FacesMessage("Mensaje", "Cambio cancelado por el usuario.");
 		FacesContext.getCurrentInstance().addMessage(null, msg);
 	}
 

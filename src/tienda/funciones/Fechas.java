@@ -9,7 +9,7 @@ public class Fechas {
 	public String DiferenciaDiasEntre2Fechas(Date fechaanterior) {
 
 		final long MILLSECS_PER_DAY = 24 * 60 * 60 * 1000; // Milisegundos al
-															// día
+															// dia
 		long diferencia;
 
 		// int anioant, mesant, diaant;
@@ -40,7 +40,7 @@ public class Fechas {
 			Date fechaNac = null;
 			/**
 			 * Se puede cambiar la mascara por el formato de la fecha que se
-			 * quiera recibir, por ejemplo año mes día "yyyy-MM-dd"
+			 * quiera recibir, por ejemplo anio mes dia "yyyy-MM-dd"
 			 */
 
 			fechaNac = new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
@@ -56,7 +56,7 @@ public class Fechas {
 					- fechaNacimiento.get(Calendar.MONTH);
 			int dia = fechaActual.get(Calendar.DATE)
 					- fechaNacimiento.get(Calendar.DATE);
-			// Se ajusta el año dependiendo el mes y el día
+			// Se ajusta el año dependiendo el mes y el dia
 			if (mes < 0 || (mes == 0 && dia < 0)) {
 				anio--;
 			}

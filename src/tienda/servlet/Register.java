@@ -42,7 +42,7 @@ public class Register extends HttpServlet {
 		// Comienzo con las validaciones
 		/*
 		 * Podemos hacer un monton de validaciones, por ejemplo: Campos no
-		 * vacios, direccion de email valida, nombre de usuario y contraseña sin
+		 * vacios, direccion de email valida, nombre de usuario y contrasenia sin
 		 * espacios y/o caracteres especiales.
 		 */
 
@@ -71,7 +71,7 @@ public class Register extends HttpServlet {
 				out.println("Ocurrio la sig exception: " + e);
 			}
 		} else {
-			respuesta.setAttribute("error", "Las contraseñas no son iguales");
+			respuesta.setAttribute("error", "Las claves no son iguales");
 		}
 
 		response.sendRedirect("register.jsp");

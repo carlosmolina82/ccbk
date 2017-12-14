@@ -7,7 +7,7 @@ public class MyUtil {
 	}
 
 	public static String baseurl() {
-		return "http://tienda-ccbk.1d35.starter-us-east-1.openshiftapps.com/tienda/faces/";
+		return "http://localhost:8080/tienda/faces/";
 	}
 
 	public static String basepathlogin() {

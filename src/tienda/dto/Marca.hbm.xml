@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 02/10/2017 18:37:43 by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property"
+	default-cascade="none" default-lazy="true">
+	<class catalog="tienda" dynamic-insert="false" dynamic-update="false"
+		mutable="true" name="tienda.dto.Marca" optimistic-lock="version" polymorphism="implicit"
+		select-before-update="false" table="marca">
+		<id name="idmarca" type="string">
+			<column length="3" name="idmarca" />
+			<generator class="assigned" />
+		</id>
+		<property generated="never" lazy="false" name="nombre"
+			optimistic-lock="true" type="string" unique="false">
+			<column length="100" name="nombre" not-null="true" unique="true" />
+		</property>
+		<property generated="never" lazy="false" name="fechareg"
+			optimistic-lock="true" type="timestamp" unique="false">
+			<column length="0" name="fechareg" not-null="true" />
+		</property>
+		<set embed-xml="true" fetch="select" inverse="true" lazy="true"
+			mutable="true" name="productos" optimistic-lock="true" sort="unsorted"
+			table="producto">
+			<key on-delete="noaction">
+				<column length="3" name="idmarca" not-null="true" />
+			</key>
+			<one-to-many class="tienda.dto.Producto" embed-xml="true" not-found="exception" />
+		</set>
+	</class>
+</hibernate-mapping>

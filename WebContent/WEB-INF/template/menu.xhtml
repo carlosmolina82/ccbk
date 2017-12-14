@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:body>
+	<h:form id="form">
+
+
+		<p:growl id="messages" />
+
+		<p:menubar>
+			<p:submenu label="Acceso" icon="ui-icon-home">
+				<p:separator />
+				
+				<p:menuitem value="Cerrar" icon="ui-icon-close"
+					url="http://localhost:8080/tienda/faces/cerrar.xhtml" />
+			</p:submenu>
+
+			<p:submenu label="Variables" icon="ui-icon-pencil">
+				<p:menuitem value="Estado" url="http://localhost:8080/tienda/faces/registro/regestado.xhtml"
+					icon="ui-icon-arrowreturnthick-1-w" />
+				<p:menuitem value="Referencia" url="http://localhost:8080/tienda/faces/registro/regtabla.xhtml"
+					icon="ui-icon-arrowreturnthick-1-e" />
+			</p:submenu>
+
+			<p:submenu label="Registros" icon="ui-icon-script">
+				<p:menuitem value="Clientes" url="http://localhost:8080/tienda/faces/registro/regtabla3.xhtml"  icon="ui-icon-newwin"/>
+				<p:menuitem value="Marcas" url="#" icon="ui-icon-refresh"/>
+				<p:menuitem value="Productos" url="#" icon="ui-icon-disk" />
+				<p:menuitem value="Proveedores" url="#" icon="ui-icon-contact" />
+				<p:menuitem value="Roles" url="http://localhost:8080/tienda/faces/registro/regrol.xhtml" icon="ui-icon-document"/>
+				<p:menuitem value="Usuarios" url="http://localhost:8080/tienda/faces/registro/regusu.xhtml" icon="ui-icon-person"/>
+			</p:submenu>
+
+			<p:submenu label="Transacciones" icon="ui-icon-gear">
+				<p:menuitem value="Ventas" url="#" icon="ui-icon-star" />
+			</p:submenu>
+			<p:submenu label="Estadísticas" icon="ui-icon-extlink">
+				<p:menuitem value="Generar" icon="ui-icon-signal" />
+			</p:submenu>
+
+		</p:menubar>
+
+
+	</h:form>
+
+</h:body>
+
+</html>

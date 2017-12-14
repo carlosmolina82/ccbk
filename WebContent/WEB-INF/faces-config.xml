@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	<managed-bean>
+		<managed-bean-name>tablaBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.TablaBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>loginBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.LoginBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>estadoBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.EstadoBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>appBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.AppBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>rolBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.RolBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>usuarioBacking</managed-bean-name>
+		<managed-bean-class>tienda.backing.UsuarioBacking</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<lifecycle>
+		<phase-listener>tienda.backing.AuthorizationListener</phase-listener>
+	</lifecycle>
+</faces-config>

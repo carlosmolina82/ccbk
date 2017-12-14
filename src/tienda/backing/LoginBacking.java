@@ -71,7 +71,7 @@ public class LoginBacking implements Serializable {
 				if (!nc.equals("noexiste")) {
 					if (!nc.equals("error")) {
 						val = usu.buscarPorAliasUsuario(alias, claveusuario);
-						System.err.println("VAL RETORNADO: " + val);
+						//System.err.println("VAL RETORNADO: " + val);
 						// validación de usuario y rol
 						switch (val) {
 						case "administrador":
@@ -86,7 +86,7 @@ public class LoginBacking implements Serializable {
 						default:
 							loggedIn = false;
 							message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Error de logueo",
-									"Usuario o contraseña incorrectos. Intente nuevamente.");
+									"Usuario o clave incorrectos. Intente nuevamente.");
 							break;
 						}
 

@@ -4,6 +4,11 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>tienda</display-name>
+		<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
 	<context-param>
 		<param-name>javax.faces.DEFAULT_SUFFIX</param-name>
 		<param-value>.xhtml</param-value>
@@ -17,11 +22,6 @@
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>/faces/*</url-pattern>
-		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>
 	<context-param>
 		<description>State saving method: 'client' or 'server' (=default). See JSF Specification 2.5.2</description>
 		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
@@ -34,8 +34,6 @@
 	<listener>
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
 	</listener>
-
-	
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
 		<param-value>cupertino</param-value>
